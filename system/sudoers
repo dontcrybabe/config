@@ -1,0 +1,1 @@
+%wheel ALL=(ALL:ALL) NOPASSWD: /usr/bin/iw dev wlan0 set power_save off, /usr/bin/dhcpcd, /bin/ip link set wlan0 up, /usr/bin/nvidia-smi
