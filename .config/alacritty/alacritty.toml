@@ -1,1 +1,7 @@
-/home/dontcrybabe/.config/alacritty/alacritty.toml
+[general]
+import = [
+    "./theme.toml"
+]
+
+[keyboard]
+

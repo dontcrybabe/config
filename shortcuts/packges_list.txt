@@ -1,0 +1,26 @@
+base base-devel bash bash-completion coreutils file filesystem \
+findutils grep gzip pacman pacman-contrib sed tar util-linux \
+util-linux-libs xz zstd zlib-ng-compat ca-certificates cryptsetup gnupg openssl sudo systemd systemd-libs \
+glibc linux-api-headers gmp mpfr libmpc \
+python clang llvm libffi libedit ncurses \
+ \
+bluez bluez-libs bluez-utils curl dhcpcd iproute2 iptables \
+iputils networkmanager network-manager-applet nm-connection-editor wpa_supplicant libmbim \
+ \
+adwaita-icon-theme cantarell-fonts gsettings-desktop-schemas gtk3 \
+libadwaita qt5-base qt6-base xdg-desktop-portal xdg-desktop-portal-gtk xdg-user-dirs xdg-utils \
+ \
+adobe-source-code-pro-fonts adobe-source-sans-fonts adobe-source-serif-fonts adwaita-fonts \
+cantarell-fonts fcft fluidsynth fontconfig fontconfig-debug freetype2 ftgl graphite gsfonts \
+lib32-fontconfig lib32-freetype2 libfontenc libotf libxfont2 libxft noto-color-emoji-fontconfig \
+noto-fonts noto-fonts-cjk noto-fonts-emoji-git noto-fonts-extra otf-font-awesome perl-font-ttf \
+python-defcon python-fonttools python-nototools ttf-anonymous-pro ttf-caladea ttf-croscore \
+ttf-dejavu ttf-dejavu-nerd ttf-google-fonts-git ttf-hack-nerd ttf-inconsolata ttf-jetbrains-mono-nerd \
+ttf-liberation ttf-ms-fonts ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols-mono ttf-roboto \
+ttf-segoe-ui-variable ttf-ubuntu-font-family woff2 woff2-font-awesome xorg-font-util xorg-fonts-encodings xorg-xlsfonts 
+ \
+alsa-lib alsa-plugins ffmpeg gstreamer gst-plugins-base gst-plugins-good pipewire pipewire-audio pipewire-pulse wireplumber \
+autoconf automake binutils bison cmake gcc gcc-libs git make ninja pkgconf python-pip python-setuptools \
+ \ 
+alacritty alacritty-theme-git niri waybar input-remapper-git xwayland-satellite-git wpaperd \
+playerctl nemo eog

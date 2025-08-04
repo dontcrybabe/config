@@ -1,1 +1,40 @@
-/home/dontcrybabe/.config/alacritty/theme.toml
+# sonokai.toml: Sonokai color scheme for Alacritty.
+
+[font]
+size = 15
+
+[colors.primary]
+foreground = "#e2e2e3"
+background = "#2c2e34"
+
+[colors.normal]
+black = "#181819"
+red = "#fc5d7c"
+#green = "#fc5d7c"
+green = "#9ed072"
+yellow = "#e7c664"
+blue = "#76cce0"
+#blue = "#fc5d7c"
+magenta = "#b39df3"
+cyan = "#f39660"
+#cyan = "#b39df3"
+white = "#e2e2e3"
+
+[colors.bright]
+black = "#7f8490"
+red = "#fc5d7c"
+green = "#9ed072"
+#green = "#fc5d7c"
+yellow = "#e7c664"
+blue = "#76cce0"
+magenta = "#b39df3"
+cyan = "#f39660"
+white = "#e2e2e3"
+
+[colors.cursor]
+text = "#2c2e34"
+cursor = "#e2e2e3"
+
+[colors.selection]
+text = "CellForeground"
+background = "#414550"
