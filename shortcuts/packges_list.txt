@@ -23,4 +23,4 @@ alsa-lib alsa-plugins ffmpeg gstreamer gst-plugins-base gst-plugins-good pipewir
 autoconf automake binutils bison cmake gcc gcc-libs git make ninja pkgconf python-pip python-setuptools \
  \ 
 alacritty alacritty-theme-git niri waybar input-remapper-git xwayland-satellite-git wpaperd \
-playerctl nemo eog
+playerctl nemo eog lsd
