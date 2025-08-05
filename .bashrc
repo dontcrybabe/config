@@ -3,6 +3,7 @@ force_color_prompt=yes
 HISTSIZE=10000
 HISTFILESIZE=20000
 shopt -s histappend
+shopt -s checkwinsize
 
 . "$HOME/clang_build.sh" || true
 . "$HOME/.cargo/env" || true
@@ -22,7 +23,7 @@ export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 export LESS='-R '
 
-export TERM=xterm-color
+export TERM=xterm
 export GREP_OPTIONS='--color=auto' GREP_COLORS='1;32'
 export CLICOLOR=1
 
@@ -34,7 +35,6 @@ if [ -n "$force_color_prompt" ]; then
   fi
 fi
 
-PS1='\[\e[1;32m\]\[\e[22m\]╭──(\[\e[1;36m\]\u\[\e[1;31m\]@\[\e[1;32m\]\h\[\e[1;32m\])-[\[\e[1;35m\]\w\[\e[1;32m\]]\n\[\e[1;32m\]\[\e[22m\]╰─'
 git_prompt() {
   if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     local branch=$(git branch --show-current 2>/dev/null || echo "HEAD")
@@ -55,14 +55,13 @@ git_prompt() {
         fi
       fi
     fi
-    echo -e "─[\e[1;33m${branch}\e[1;32m|\e[1;33m${commit_display}\e[1;32m]"
-   else
-    echo "────────────"
+     GIT_PROMPT="─[\[\e[1;33m\]${branch}\[\e[1;32m\]]|[\[\e[1;33m\]${commit_display}\[\e[1;32m\]]"
+  else
+    GIT_PROMPT="────────────"
   fi
 }
-
-PS1+='$(git_prompt)\[\e[1;31m\]\$\[\e[0m\] '
-
+# Ensure git_prompt is called before each prompt
+PROMPT_COMMAND='git_prompt; PS1="\[\e[1;32m\]\[\e[22m\]╭──(\[\e[1;36m\]\u\[\e[1;31m\]@\[\e[1;32m\]\h\[\e[1;32m\])-[\[\e[1;35m\]\w\[\e[1;32m\]]\n\[\e[1;32m\]\[\e[22m\]╰─${GIT_PROMPT}\[\e[1;31m\]\$\[\e[0m\]"'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
