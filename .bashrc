@@ -34,9 +34,34 @@ if [ -n "$force_color_prompt" ]; then
   fi
 fi
 
-PS1='\[\033[1;36m\]\u\[\033[1;31m\]@\[\033[1;32m\]\h:\[\033[1;35m\]\w\[\033[1;31m\]\$\[\033[0m\] '
+PS1='\[\e[1;32m\]\[\e[22m\]╭──(\[\e[1;36m\]\u\[\e[1;31m\]@\[\e[1;32m\]\h\[\e[1;32m\])-[\[\e[1;35m\]\w\[\e[1;32m\]]\n\[\e[1;32m\]\[\e[22m\]╰─'
+git_prompt() {
+  if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    local branch=$(git branch --show-current 2>/dev/null || echo "HEAD")
+    local current_commit=$(git rev-parse --short HEAD 2>/dev/null)
+    local local_head=$(git log -1 --pretty=%h 2>/dev/null)
+    local commit_display="$current_commit"
 
+    # Check if current commit is local HEAD
+    if [ "$current_commit" = "$local_head" ]; then
+      commit_display="HEAD"
+    else
+      # Check for remote tracking branch
+      local remote_branch=$(git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null)
+      if [ -n "$remote_branch" ]; then
+        local remote_head=$(git rev-parse --short "$remote_branch" 2>/dev/null)
+        if [ "$current_commit" = "$remote_head" ]; then
+          commit_display="remote HEAD"
+        fi
+      fi
+    fi
+    echo -e "─[\e[1;33m${branch}\e[1;32m|\e[1;33m${commit_display}\e[1;32m]"
+   else
+    echo "────────────"
+  fi
+}
 
+PS1+='$(git_prompt)\[\e[1;31m\]\$\[\e[0m\] '
 
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
@@ -45,7 +70,7 @@ alias diff='diff --color=auto'
 
 alias ls="lsd"
 alias ls='ls --color=auto'
-alias ll="ls -a -l"
+alias ll="lsd -a -l"
 alias pp="poweroff"
 
 alias mysudo='sudo -E env "PATH=$PATH"'
