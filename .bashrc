@@ -23,7 +23,7 @@ export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 export LESS='-R '
 
-export TERM=xterm
+export TERM=xterm-color
 export GREP_OPTIONS='--color=auto' GREP_COLORS='1;32'
 export CLICOLOR=1
 
@@ -61,7 +61,7 @@ git_prompt() {
   fi
 }
 # Ensure git_prompt is called before each prompt
-PROMPT_COMMAND='git_prompt; PS1="\[\e[1;32m\]\[\e[22m\]╭──(\[\e[1;36m\]\u\[\e[1;31m\]@\[\e[1;32m\]\h\[\e[1;32m\])-[\[\e[1;35m\]\w\[\e[1;32m\]]\n\[\e[1;32m\]\[\e[22m\]╰─${GIT_PROMPT}\[\e[1;31m\]\$\[\e[0m\] "'
+PROMPT_COMMAND='git_prompt; PS1="\[\e[1;32m\]\[\e[22m\]╭──(\[\e[1;36m\]\u\[\e[1;31m\]@\[\e[1;34m\]\h\[\e[1;32m\])-[\[\e[1;35m\]\w\[\e[1;32m\]]\n\[\e[1;32m\]\[\e[22m\]╰─${GIT_PROMPT}\[\e[1;31m\]\$\[\e[0m\] "'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
