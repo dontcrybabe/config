@@ -4,7 +4,7 @@ Config for Arch linux
 
 ### Builds
 - [x] x264 (script for source from github repos)
-- [x] x265 (script for source from github repos)
+- [x] x265 (8+9+10 bits) (script for source from github repos)
 - [x] ffmpeg (not nvcc Cuda - or looking for correct cuda-tools version)
 - [x] clang/gcc environment changers `sh`
 
