@@ -7,6 +7,9 @@ shopt -s checkwinsize
 
 . "$HOME/clang_build.sh" || true
 . "$HOME/.cargo/env" || true
+#. "$HOME/.bash_profile" || true
+export PATH=~/bin:$PATH
+
 
 export GTK_THEME=Adwaita:dark
 export QT_STYLE_OVERRIDE=Adwaita-Dark
@@ -23,7 +26,7 @@ export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 export LESS='-R '
 
-export TERM=xterm-color
+export TERM=xterm
 export GREP_OPTIONS='--color=auto' GREP_COLORS='1;32'
 export CLICOLOR=1
 
