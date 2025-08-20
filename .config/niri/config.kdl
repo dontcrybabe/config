@@ -61,7 +61,7 @@ input {
 
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    // focus-follows-mouse max-scroll-amount="0%"
+    //focus-follows-mouse max-scroll-amount="0%"
 }
 
 // You can configure outputs by their name, which you can find
@@ -137,9 +137,8 @@ layout {
     // If you leave the brackets empty, the windows themselves will decide their initial width.
     // default-column-width {}
 
-    // By default focus ring and border are rendered as a solid background rectangle
-    // behind windows. That is, they will show up through semitransparent windows.
-    // This is because windows using client-side decorations can have an arbitrary shape.
+    // By default focus ring and border are rendered as a solid background rectangle behind windows. That is, they will show up 
+    // through semitransparent windows. This is because windows using client-side decorations can have an arbitrary shape.
     //
     // If you don't like that, you should uncomment `prefer-no-csd` below.
     // Niri will draw focus ring and border *around* windows that agree to omit their
@@ -283,7 +282,7 @@ spawn-at-startup "bash" "-c" "$HOME/shortcuts/wayland.sh"
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
-// prefer-no-csd
+prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
@@ -330,11 +329,12 @@ window-rule {
     open-maximized true
     draw-border-with-background false
     tiled-state true
+    clip-to-geometry true
     focus-ring{
         off
     }
     border {                                                                              
-        off                                                                                               
+        off                                                                     
     }
     shadow{
         off    

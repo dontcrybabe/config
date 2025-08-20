@@ -3,5 +3,7 @@ import = [
     "./theme.toml"
 ]
 
+[window]
+opacity = 0.75
 [keyboard]
 
