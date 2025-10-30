@@ -325,7 +325,7 @@ window-rule {
     open-floating true
 }
 window-rule {
-    match app-id="rustrover"
+    match app-id="rustrover|webstorm"
     open-maximized true
     draw-border-with-background false
     tiled-state true

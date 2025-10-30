@@ -17,7 +17,7 @@ export QT_STYLE_OVERRIDE=Adwaita-Dark
 #export QT_QPA_PLATFORM="wayland;xcb"
 #export ENABLE_HDR_WSI=1
 
-export _JAVA_OPTIONS="-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.defaultlaf=com.sun.java.swing.plaf.motif.MotifLookAndFeel -Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true";
+export _JAVA_OPTIONS="-Dawt.toolkit.name=WLToolkit -Dhidpi=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.defaultlaf=com.sun.java.swing.plaf.motif.MotifLookAndFeel -Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true";
 
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
@@ -74,7 +74,7 @@ alias ls="lsd"
 alias ls='ls --color=auto'
 alias ll="lsd -a -l"
 alias pp="poweroff"
-
+alias sus="systemctl suspend"
 alias mysudo='sudo -E env "PATH=$PATH"'
 alias paf='printf "$PWD/%s\n" $1'
 
@@ -82,3 +82,6 @@ alias ..="cd .."
 alias hh="cd ~"
 
 alias br="cargo build --release && cargo run --release"
+
+alias ga="git add ."
+alias gmm="git commit --allow-empty-message -m ''"

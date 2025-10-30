@@ -2,12 +2,13 @@
 opt-level = 3
 debug = false
 strip = true
-#debug-assertions = true
-overflow-checks = false
-lto = true
-#panic = 'unwind'
-incremental = false
-codegen-units = 1
-rpath = false
+overflow-checks = false   # Enables runtime integer overflow checks.
+lto = true              # Sets link-time optimization.
+panic = 'abort'         # The panic strategy.
+incremental = false       # Incremental compilation.
+codegen-units = 1      # Number of code generation units.
+rpath = false            # Sets the rpath linking option.
+
 [build]
-rustflags = ["-C", "opt-level=3", "-C", "target-cpu=znver3"]
+rustflags = ["-C", "opt-level=3", "-C", "target-cpu=native", "-C", "link-arg=-fuse-ld=lld"]
+
