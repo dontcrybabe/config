@@ -20,19 +20,19 @@
 //	"mpd",
         "pulseaudio",
         "network",
-        "power-profiles-daemon",
+//        "power-profiles-daemon",
         "cpu",
         "memory",
         "temperature",
         "backlight",
-        "keyboard-state",
+//        "keyboard-state",
 //        "sway/language",
         "battery",
 	"custom/battery_power",
-        "battery#bat2",
+//        "battery#bat2",
         "clock",
-        "tray",
-        "custom/power"
+        "tray"
+//        "custom/power"
     ],
     // Modules configuration
     // "sway/workspaces": {
@@ -109,8 +109,10 @@
     },
     "clock": {
         // "timezone": "America/New_York",
+	"interval": 1,
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%d-%m-%Y}",
+	"format": "{:%H:%M:%S}  ",
     },
     "cpu": {
         "format": "{usage}% ",
@@ -220,3 +222,4 @@
 		}
     }
 }
+?
